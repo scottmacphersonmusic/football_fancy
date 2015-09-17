@@ -26,9 +26,10 @@ class ActiveSupport::TestCase
     click_on "Sign up"
   end
 
-  def sign_in
+  def sign_in(user_name)
+    user = users(user_name.to_sym)
     visit new_user_session_path
-    fill_in :Email, with: users(:scott).email
+    fill_in :Email, with: user.email
     fill_in :Password, with: "password"
     click_on "Log in"
   end

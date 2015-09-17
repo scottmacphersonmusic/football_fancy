@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'contributors', to: 'contributors#index'
+  get '/contributors/:id', to: 'contributors#show', as: 'contributor'
   devise_for :users
   resources :topics
   root 'topics#index'

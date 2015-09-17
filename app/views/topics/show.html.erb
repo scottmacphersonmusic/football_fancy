@@ -9,15 +9,21 @@
   <%= @topic.body %>
 </p>
 
+<p><strong>Contributors:</strong></p>
+
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <%= link_to contributor_path(user) do %>
+          <%= user.email %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<hr/>
+
 <%= link_to 'Edit', edit_topic_path(@topic) %> |
 <%= link_to 'Back', topics_path %> |
 <%= link_to('Destroy', topic_path, method: :delete,
     data: { confirm: 'Are you sure?' }) %>
-
-<h3>Contributors</h3>
-
-<ul>
-  <% @users.each do |user| %>
-    <li><%= user.email %></li>
-  <% end %>
-</ul>

@@ -1,16 +1,23 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Title:</strong>
+  <strong>Title:</strong><br/>
   <%= @topic.title %>
 </p>
 
+
 <p>
-  <strong>Body:</strong>
+  <strong>Body:</strong><br/>
   <%= @topic.body %>
 </p>
 
 <%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>
+<%= link_to 'Back', topics_path %> |
 <%= link_to('Destroy', topic_path, method: :delete,
-             data: { confirm: 'Are you sure?' }) %>
+    data: { confirm: 'Are you sure?' }) %>
+
+<h3>Contributors</h3>
+
+<ul>
+  <% @users.each do |user| %>
+    <li><%= user.email %></li>
+  <% end %>
+</ul>

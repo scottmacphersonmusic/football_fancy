@@ -2,6 +2,7 @@ require 'test_helper'
 
 feature "topics have crud actions" do
   scenario "create a new topic" do
+    sign_in
     visit new_topic_path
     # When I submit the form
     fill_in 'Title', with: "D'Andre Yedlin"
@@ -13,6 +14,7 @@ feature "topics have crud actions" do
   end
 
   scenario "edit an existing topic" do
+    sign_in
     visit edit_topic_path(topics(:one))
     # When I edit and submit the form
     fill_in 'Title', with: "Clint Dempsey"
@@ -24,6 +26,7 @@ feature "topics have crud actions" do
   end
 
   scenario "delete topic" do
+    sign_in
     visit topic_path(topics(:two))
     # When I click destroy
     click_on "Destroy"

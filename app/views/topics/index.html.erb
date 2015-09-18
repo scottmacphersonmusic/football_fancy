@@ -1,5 +1,12 @@
 <h1>Topics</h1>
 
+<div>
+  <%= link_to "New Topic", new_topic_path %> |
+  <%= link_to "Contributors", contributors_path %>
+</div>
+
+<br/>
+
 <hr/>
 
 <% @topics.each do |topic| %>
@@ -14,8 +21,3 @@
   <hr/>
 <% end %>
 <br>
-
-<div>
-  <%= link_to "New Topic", new_topic_path %> |
-  <%= link_to "Contributors", contributors_path %>
-</div>

@@ -35,7 +35,6 @@ feature "contributors topics list eachother" do
     fill_in "Title", with: "Stefan Frei is still amazing"
     click_on "Update Topic"
     visit contributor_path(users(:scott))
-    save_and_open_page
     page.must_have_content("Stefan Frei is still amazing", count: 1)
   end
 end

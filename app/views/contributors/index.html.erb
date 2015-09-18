@@ -1,0 +1,12 @@
+<h1>Contributors</h1>
+<ul>
+  <% @contributors.each do |c| %>
+    <li>
+      <%= link_to contributor_path(c) do %>
+        <%= c.email %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+<hr/>
+<%= link_to "Back", topics_path %>

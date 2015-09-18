@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'contributors', to: 'contributors#index'
+  get '/contributors/:id', to: 'contributors#show', as: 'contributor'
+  devise_for :users
+  resources :topics
+  root 'topics#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
